@@ -29,6 +29,7 @@ jobs:
     if: github.event_name != 'pull_request'
     
     permissions:
+      contents: read
       packages: write
     
     steps: 
@@ -43,7 +44,7 @@ jobs:
           password: ${{ secrets.IMAGE_PUSH_TOKEN }}
 
       - name: Extract metadata for docker/build-push-action
-        id: mata
+        id: meta
         uses: docker/metadata-action@v3
         with:
           images: ghcr.io/${{ github.repository}}
