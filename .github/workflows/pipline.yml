@@ -44,7 +44,7 @@ jobs:
 
       - name: Extract metadata for docker/build-push-action
         id: mata
-        uses: docker/metadata-actions@v6
+        uses: docker/metadata-actions@latest
         with:
           images: ghcr.io/${{ github.repository}}
 
